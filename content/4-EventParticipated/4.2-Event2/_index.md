@@ -1,126 +1,127 @@
 ---
 title: "Event 2"
-date: 2024-01-01
+date: 2026-06-13
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+
+# Summary Report: “Scalable AWS Architecture & DevOps Fundamentals”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Share how to design and deploy scalable system architectures, specifically highlighting a URL shortener service on the AWS platform.
+- Provide a practical perspective and share real-world experiences regarding the roles and daily tasks of DevOps and Data Analytics Engineers in enterprises.
+- Guide the learning roadmap, equip students with foundational skills, and provide career development orientations in the IT industry starting from university.
+- Introduce standard recruitment processes and working cultures in multinational corporations (MNCs).
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Dat Pham** - Data Analytics Engineer
+- **Cuong Nguyen** - Process Engineer
+- **Trong H. Truong** - DevOps Engineer at Endava Vietnam
+- **Danh Hoang Hieu Nghi** - AI Engineer, AWS Community Builder, AWS Student Builder Group Leader
+- **Dinh Trung Kien** - Lead Developer at startup
+- **Nguyen Minh Tho** - Student
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### The Journey of Starting and Growing with Cloud Computing
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+Starting from Student Curiosity <br>
+→ Learning from tech communities <br>
+→ Practicing through hands-on labs <br>
+→ Building personal projects & portfolios → Becoming an AWS Partner <br>
+→ Sharing knowledge back to the community (Share Back).<br>
+Getting the job is not the destination but merely the beginning of a long journey of learning and contribution.
 
-#### Transitioning to modern application architecture – Microservices
+#### Introduction to URL Shortener System Design on AWS
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- The basic architecture has the **advantages** of easy deployment and low cost but faces **limitations** such as security risks, single points of failure, high latency, and difficulties in scaling.
+- To optimize performance and security, services like Amazon CloudFront, AWS WAF, and AWS Amplify can be integrated.
+- Using a Key Generation Service (KGS) on Amazon ECS to pre-generate short keys and push them into the Amazon ElastiCache (Redis) helps optimize overall system speed.
+- At the Backend, a SpringBoot application on Amazon ECS fetches the short key from Redis to map it with the destination URL and stores it in a DynamoDB database.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Real-World Work and Career Roadmap of a DevOps Engineer
 
-#### Domain-Driven Design (DDD)
+First, to truly understand DevOps, it's not just about writing CI/CD pipelines, configuring the cloud, or managing Docker/Kubernetes; it also requires a deep understanding of how applications run in the real world.<br>
+**Required Foundational Knowledge:**
+- Prioritize mastering Linux fundamentals
+- Basic Networking knowledge
+- Programming languages (e.g., Python, Golang)
+- Git
+- CI/CD
+- Containers
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+**Working Mindset:** Tools may change, but fundamentals stay.
+A good DevOps engineer needs to develop system thinking, stay curious and keep learning, automate boring tasks, and make things clear and easy for everyone in the team.
 
-#### Event-Driven Architecture
+#### Career Orientation and Skills of a Data Analytics Engineer
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+- **Real-world responsibilities:** Varies by industry domain, focusing on building reports, designing dashboards to track trends, conducting root cause analysis, and collaborating across departments to solve operational problems.
+- **Required skills:** Critical thinking to evaluate information objectively, effective communication skills, data storytelling capabilities, and the ability to find optimal solutions based on data.
+- **Career progression:** Follower → Learner → Problem Solver → System Thinker → Super Star.
 
-#### Compute Evolution
+#### Corporate Culture in Multinational Corporations (MNCs)
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Standardized recruitment process:** Candidates go through multiple screening rounds, from ATS systems to interviews assessing technical skills and culture fit.
+- **Working environment**: Cultivates a respectful and caring workplace that values diversity and encourages comprehensive development.
+- **"No-Blame Post-Mortem" culture**: When operational incidents occur, the company focuses on root cause analysis to improve systems and processes rather than assigning blame to individuals.
 
 ### Key Takeaways
 
-#### Design Mindset
+#### Architectural Thinking & System Design
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Scalability mindset**: Always aim for a scalable and flexible system. Understand how to transition from a simple monolithic architecture to a highly scalable distributed architecture, utilizing caching and NoSQL databases.
+- **Separation of Concerns**: Designing a separate Key Generation Service (KGS) helps reduce the direct load on the primary database when generating short URLs.
+- **Latency & Security optimization**: Combine Amazon CloudFront, AWS WAF, and API Gateway to protect the system and deliver an optimal end-user experience.
 
-#### Technical Architecture
+#### DevOps Mindset & System Operations
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- Master **fundamental knowledge** such as Linux, Networking, and Containers instead of relying heavily on tools that constantly change over time.
+- Embrace **System Thinking**, viewing an application throughout its entire lifecycle (Build, Test, Deploy, Monitor, Fix) rather than just completing isolated tasks.
+- Learn how to analyze incidents and always look for ways to improve the system to prevent recurring errors and proactively mitigate potential future vulnerabilities.
 
-#### Modernization Strategy
+#### Career Roadmap & Professional Conduct
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- A career development roadmap should be built through practical products, certifications, community contributions, and continuous learning.
+- Besides technical expertise, soft skills—especially communication and active listening—play a crucial role in an international environment.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Caching**: Optimize data queries by utilizing Redis as a cache.
+- **DynamoDB**: NoSQL database → build applications that require high security, fast response times, flexibility, and auto-scaling capabilities.
+- **Automate CI/CD pipelines**: Use Python/Golang to write automation scripts and optimize Dockerfiles, eliminating repetitive manual tasks.
+- **Enhance Data Storytelling**: Design dashboards focusing on key business metrics and perform Root Cause Analysis (RCA).
+- **Build hands-on portfolio**: Participate in practical AWS labs and proactively share back in the community to improve practical skills and expand professional networks.
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the event was an incredibly valuable and rewarding experience, helping me expand my mindset on AWS architectural design, truly understand the nature of DevOps and Data Analytics roles, and shape my tech career roadmap.
 
 #### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+- Experienced speakers from the AWS Community, Endava, Colgate-Palmolive, and Kamereo brought highly enriching and authentic real-world stories.
+- Their sharing went beyond theory, diving deep into practical technical problems and management perspectives at large corporations.
 
 #### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+- Listening to the breakdown of each component in the URL Shortener architecture helped me clearly visualize how to combine cloud services to solve latency and scalability challenges.
+- Understanding the real perspective of an experienced DevOps Engineer helped clear up common misconceptions about the profession, revealing the hidden challenges and guiding me to choose the right learning focus.
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+#### Impact on Mindset & Career Orientation
+- Adopting the "No-Blame Post-Mortem" mindset changed my perspective on mistakes at work: an incident is an opportunity to fortify the system, not to assign blame.
+- Clearly seeing the growth roadmap from a student to an AWS Community Builder and AWS Partner gave me a strong motivation to persistently accumulate knowledge and aim for new milestones.
 
 #### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+- The event fostered an open atmosphere, providing opportunities for direct exchange and networking with industry experts.
+- Reinforced the importance of **community involvement** (such as the AWS Student Builder Group and First Cloud AI Journey) to expand relationships and grow together.
 
 #### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- Foundational knowledge and problem-solving mindsets are long-term assets, whereas tech tools will constantly change.
+- Career success requires a harmonious combination of deep technical expertise and communication, inclusion, and cultural understanding skills.
+- Always proactively learn, build practical products, and be ready to share knowledge back with the community.
 
 #### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+*Add your event photos here* 
+> In conclusion, the event provided a fresh perspective, valuable experiences, insights, and immense inspiration from the speakers, giving me a much clearer vision of my future career development path.
