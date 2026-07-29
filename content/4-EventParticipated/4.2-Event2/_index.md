@@ -8,7 +8,7 @@ pre: " <b> 4.2. </b> "
 
 
 
-# Summary Report: “Scalable AWS Architecture & DevOps Fundamentals”
+# Summary Report: “Scalable AWS Architecture & DevOps Fundamentals workshop”
 
 ### Event Objectives
 
