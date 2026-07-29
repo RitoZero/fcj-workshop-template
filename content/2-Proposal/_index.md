@@ -1,115 +1,131 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-06-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
+
 {{% notice warning %}}
 ⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+# Serverless Todo/Note Web Application on AWS
+## A Modern Personal Productivity Platform Powered by AWS Serverless Architecture
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+---
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The **Serverless Todo/Note Web Application** project is designed to provide a modern, highly flexible, and secure personal task and note management platform. By fully leveraging **AWS Serverless architecture**, the system automatically scales with traffic, optimizes operational costs to near zero when idle, and completely eliminates the overhead of managing traditional server infrastructure.
+
+---
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+#### The Problem
+* **Heavy Infrastructure Overhead:** Traditional task management apps hosted on virtual servers (EC2/VPS) maintain fixed monthly running costs regardless of actual traffic volume.
+* **Security & Isolation Risks:** Lack of fine-grained access control mechanisms poses data privacy and leak risks between different users.
+* **Inefficient File Attachments:** Uploading images directly through backend API servers causes bandwidth bottlenecks and increases system latency.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+#### The Proposed Solution
+A full-stack Serverless Web Application built on AWS:
+* **Frontend:** Hosted on Amazon S3 and distributed via AWS CloudFront CDN (HTTPS).
+* **Authentication:** Amazon Cognito handles user Registration/Login and issues secure JWT Tokens.
+* **API & Compute:** Amazon API Gateway integrated with JWT Authorizer routes requests to AWS Lambda functions executing CRUD logic and generating S3 Presigned URLs.
+* **Storage:** Amazon DynamoDB stores task/note metadata (NoSQL) while Amazon S3 manages image attachments.
+
+#### Benefits & Return on Investment (ROI)
+* **Cost-Efficient:** Maximizes the AWS Free Tier benefits (1M Lambda requests/month, 25 GB DynamoDB, 5 GB S3, 1 TB CloudFront), keeping monthly costs between $0.00 and $0.50 USD.
+* **High Availability & Auto Scaling:** Seamlessly scales from 1 to thousands of concurrent users without manual server scaling configuration.
+
+---
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+The application is structured into 7 core layers as illustrated in the architecture diagram:
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Serverless Todo/Note Architecture](/images/2-Proposal/architecture_diagram.png)
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+#### AWS Services Used
+1. **Client Layer:** User Browser.
+2. **Frontend Hosting Layer:**
+   * **Amazon S3 (Frontend Static Bucket):** Hosts static web assets (HTML, CSS, JS).
+   * **AWS CloudFront:** Global Content Delivery Network providing HTTPS encryption.
+3. **Authentication Layer:**
+   * **Amazon Cognito:** Manages User Pools, handles Register/Login flows, and issues JWT Tokens.
+4. **API Layer:**
+   * **Amazon API Gateway:** Entry point for REST HTTP requests validated via JWT Authorizer.
+5. **Backend Compute Layer:**
+   * **AWS Lambda:** Executes backend CRUD business logic and generates S3 Presigned URLs.
+6. **Data Storage Layer:**
+   * **Amazon DynamoDB:** NoSQL database storing task data (Primary Key: `userId`, Sort Key: `taskId`).
+   * **Amazon S3 (Attachments Bucket):** Securely stores user-uploaded image attachments.
+7. **Monitoring, Security & Cost Control Layer:**
+   * **Amazon CloudWatch:** Captures execution Logs, tracks Metrics, and triggers Alarms.
+   * **AWS IAM:** Enforces access control following the Principle of Least Privilege.
+   * **AWS Budgets:** Configures threshold billing alerts for cost monitoring.
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+---
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+#### Key Features (8 User Story Epics)
+1. **Authentication:** Register, Log In, Log Out, Change Password, Profile Update, Delete Account.
+2. **Task & Note Management:** Create/Edit/Delete Tasks, attach images (S3 Presigned URL), Assign Categories/Tags, Auto-save.
+3. **Time Organization:** Assign dates, view tasks by Day/Week/Month/Date Range.
+4. **Search & Custom Filters:** Title search, filter by Status/Tag/Category, save custom filter presets.
+5. **Multiple Views:** List View, Kanban Board, Timeline, and Calendar views.
+6. **Custom Workflow:** Customize status columns, assign colors, drag-and-drop cards on Kanban Board.
+7. **Import / Export:** Export and import task data via JSON/CSV files or Copy/Paste buffer.
+8. **Statistics:** Total task metrics, distribution charts by Category, Status, Tag, and time trends.
+
+---
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+
+The project is executed across the **12-week internship period** (from **June 1, 2026** to **August 21, 2026**):
+
+* **Month 1 (Weeks 1 - 4):**
+  * Learn AWS fundamentals (Console, CLI, EC2, IAM, VPC, S3, DynamoDB NoSQL).
+  * Configure AWS Budgets for billing management.
+* **Month 2 (Weeks 5 - 8):**
+  * Study AWS Lambda, API Gateway, Amazon Cognito, and S3 Security best practices.
+  * Setup CloudWatch Alarms and finalize Project Proposal for Mentor review.
+  * Publish 3 Tech Blogs on the AWS Study Group community.
+* **Month 3 (Weeks 9 - 12):**
+  * **Week 9:** Provision DynamoDB Tables, S3 Attachments Bucket, and code Backend Lambda CRUD logic.
+  * **Week 10:** Integrate API Gateway JWT Authorizer, connect Cognito Auth, and deploy Frontend to S3 + CloudFront CDN.
+  * **Week 11:** Execute End-to-End testing across all 8 User Story Epics, audit IAM Roles, and document Clean-up steps.
+  * **Week 12:** Author step-by-step Technical Workshop documentation and finalize Hugo Bilingual Report.
+
+---
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+All utilized services fall well within the **AWS Free Tier** allocation:
+* **AWS Lambda:** 1,000,000 free requests per month $\rightarrow$ **$0.00**
+* **Amazon DynamoDB:** 25 GB storage & 25 WCU/RCU free $\rightarrow$ **$0.00**
+* **Amazon S3:** 5 GB Standard Storage free $\rightarrow$ **$0.00**
+* **AWS CloudFront:** 1 TB Data Transfer Out per month free $\rightarrow$ **$0.00**
+* **Amazon Cognito:** 50,000 Monthly Active Users (MAUs) free $\rightarrow$ **$0.00**
+* **Amazon API Gateway:** 1,000,000 HTTP API calls free per month $\rightarrow$ **$0.00**
 
-Total: $0.7/month, $8.40/12 months
+👉 **Total Estimated Monthly Cost:** **$0.00 USD/month** (Max **$0.50 USD/month** for minimal overages).
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+---
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+| Risk Description | Severity | Mitigation Strategy |
+| :--- | :--- | :--- |
+| **CORS Origin Block on API Gateway** | Medium | Configure `Access-Control-Allow-Origin: '*'` headers on both API Gateway Responses and Lambda handlers. |
+| **Auth Token Drop / Session Eviction** | Medium | Align Cognito ID Token usage with Authorization Headers stored in Frontend LocalStorage. |
+| **Public S3 Data Exposure** | High | Enable S3 Block Public Access, KMS Encryption, and restrict uploads to short-lived Presigned URLs. |
+| **Unexpected AWS Billings** | Low | Setup AWS Budgets alerts to trigger email notifications at $1.00 USD threshold. |
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+---
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+* **Functional Deliverable:** A fully working Serverless Todo/Note Web Application deployed on CloudFront HTTPS covering all 8 User Story Epics.
+* **Standardized Workshop Guide:** Detailed Step-by-Step technical instructions allowing peers to replicate the deployment end-to-end.
+* **Professional Internship Report:** A bilingual (VI/EN) Hugo website fulfilling 100% of FCAJ internship sign-off requirements.
