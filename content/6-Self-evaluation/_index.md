@@ -1,39 +1,42 @@
 ---
 title: "Self-Assessment"
-date: 2024-01-01
+date: 2026-06-01
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
 {{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
+⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+During my internship at the **First Cloud AI Journey (FCAJ)** program from **June 1, 2026** to **August 21, 2026**, I had the opportunity to learn, practice, and apply cloud computing knowledge acquired in school to a real-world working environment.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+I actively participated in researching, designing, and deploying the **Serverless Todo/Note Web Application on AWS** project. Through this experience, I significantly improved my professional skills in Serverless application development (AWS Lambda, API Gateway, DynamoDB), cloud security management (AWS IAM, Amazon Cognito, S3 Security), system architecture design, and bilingual technical documentation writing.
+
+In terms of work ethic, I always strived to complete weekly milestones effectively, complied with program regulations, and actively engaged with Mentors and peers in the AWS Study Group community to improve work efficiency.
 
 To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+| No. | Criteria | Description | Good | Fair | Average |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| 1 | **Professional knowledge & skills** | Understanding of Cloud domain, applying knowledge in practice, proficiency with tools, work quality | ✅ | ☐ | ☐ |
+| 2 | **Ability to learn** | Ability to absorb new knowledge and learn quickly | ☐ | ✅ | ☐ |
+| 3 | **Proactiveness** | Taking initiative, seeking out solutions without waiting for instructions | ✅ | ☐ | ☐ |
+| 4 | **Sense of responsibility** | Completing tasks on schedule across 12-week worklog and ensuring project quality | ✅ | ☐ | ☐ |
+| 5 | **Discipline** | Adhering to schedules, workplace rules, and reporting processes | ☐ | ☐ | ✅ |
+| 6 | **Progressive mindset** | Willingness to receive Mentor feedback and improve oneself | ☐ | ✅ | ☐ |
+| 7 | **Communication** | Presenting technical ideas, writing technical blogs, and reporting work clearly | ☐ | ✅ | ☐ |
+| 8 | **Teamwork** | Working effectively with FCAJ members and active participation in AWS Study Group | ✅ | ☐ | ☐ |
+| 9 | **Professional conduct** | Respecting Mentors, colleagues, and the professional work environment | ✅ | ☐ | ☐ |
+| 10 | **Problem-solving skills** | Troubleshooting system issues, proposing architecture solutions, showing creativity | ☐ | ✅ | ☐ |
+| 11 | **Contribution to project/team** | Work effectiveness, completing 8 User Story Epics, technical knowledge sharing | ✅ | ☐ | ☐ |
+| 12 | **Overall** | General evaluation of the entire 12-week internship period | ✅ | ☐ | ☐ |
 
-### Needs Improvement
+---
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+### 💡 Areas Needing Improvement
+
+* **Strengthen discipline:** Strictly comply with time schedules, office rules, and organization processes.
+* **Enhance problem-solving mindset:** Deepen root-cause analysis (log analytics) skills when encountering complex Production-level errors.
+* **Improve communication skills:** Boost confidence and articulateness during technical discussions and professional interactions.
