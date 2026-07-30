@@ -8,30 +8,47 @@ pre : " <b> 5.6. </b> "
 
 #### Dọn dẹp tài nguyên
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+Xin chúc mừng bạn đã hoàn thành xong workshop này!
+Trong workshop này, bạn đã học cách xây dựng và triển khai một mô hình kiến trúc Web Serverless hoàn chỉnh và bảo mật trên AWS.
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
++ Bằng cách kết hợp Amazon S3, CloudFront và OAC, bạn đã phân phối giao diện web tĩnh với tốc độ cao và an toàn tuyệt đối mà không cần mở Public Access.
++ Bằng cách sử dụng Amazon Cognito, API Gateway, AWS Lambda và DynamoDB, bạn đã xây dựng một hệ thống Backend phi máy chủ mạnh mẽ, tự động mở rộng và tối ưu hóa chi phí vận hành.
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+#### Các bước dọn dẹp
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+1. **Vô hiệu hóa và xóa CloudFront Distribution**
+Điều hướng đến dịch vụ CloudFront trên console. Chọn Distribution mà bạn đã tạo cho dự án này. Nhấp vào **Disable** (quá trình này có thể mất khoảng 3-5 phút). Sau khi trạng thái chuyển sang *Disabled*, chọn lại Distribution đó và nhấp vào **Delete**.
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+![delete cloudfront](/images/5-Workshop/5.6-Cleanup/delete-cloudfront.png)
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+2. **Xóa các S3 bucket**
+Mở bảng điều khiển S3. Chọn các bucket chúng ta đã tạo cho lab (bao gồm Frontend bucket và Attachment bucket). 
++ Đầu tiên, nhấp vào **Empty** để xóa toàn bộ file bên trong, xác nhận bằng cách gõ `permanently delete`.
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
+![delete s3](/images/5-Workshop/5.6-Cleanup/empty-s3.png)
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
++ Sau khi bucket đã trống, nhấp chọn lại bucket đó, nhấn **Delete** và xác nhận tên bucket để xóa hoàn toàn.
 
-5. Xóa các S3 bucket
-
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
 ![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+
+3. **Xóa API Gateway**
+Mở bảng điều khiển API Gateway. Chọn API của dự án này, nhấp vào nút **Delete** ở góc trên và xác nhận thao tác xóa.
+
+![delete apigw](/images/5-Workshop/5.6-Cleanup/delete-apigw.png)
+
+![delete apigw](/images/5-Workshop/5.6-Cleanup/delete-apigw-confirmation.png)
+
+4. **Xóa hàm AWS Lambda**
+Mở bảng điều khiển AWS Lambda. Đánh dấu tick vào hàm Lambda đã tạo, nhấn mục **Actions** trên thanh công cụ -> Chọn **Delete** và xác nhận.
+
+![delete lambda](/images/5-Workshop/5.6-Cleanup/delete-lambda.png)
+
+5. **Xóa bảng DynamoDB**
+Điều hướng đến dịch vụ DynamoDB, chọn **Tables** ở thanh menu bên trái. Chọn các bảng dữ liệu đã tạo, nhấp vào nút **Delete** và nhập từ khóa xác nhận theo yêu cầu của AWS.
+
+![delete dynamodb](/images/5-Workshop/5.6-Cleanup/delete-dynamodb.png)
+
+6. **Xóa Amazon Cognito User Pool**
+Mở bảng điều khiển Amazon Cognito. Chọn User Pool của dự án, điều hướng đến phần cài đặt của Pool, nhấp vào **Delete** và làm theo hướng dẫn xác nhận trên màn hình.
+
+![delete cognito](/images/5-Workshop/5.6-Cleanup/delete-cognito.png)
