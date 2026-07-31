@@ -44,7 +44,7 @@ A full-stack Serverless Web Application built on AWS:
 
 The application is structured into 7 core layers as illustrated in the architecture diagram:
 
-![Serverless Todo/Note Architecture](../images/2-Proposal/architecture_diagram.png)
+![Serverless Todo/Note Architecture](<../images/2-Proposal/architecture_diagram.jpg>)
 
 #### AWS Services Used
 1. **Client Layer:** User Browser.
