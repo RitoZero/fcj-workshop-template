@@ -19,17 +19,12 @@ The deployment is split into four parts:
 1. [5.4.1 Prepare the backend](./5.4.1-prepare/)
 2. [5.4.2 Create the Lambda function](./5.4.2-create-lambda-function/)
 3. [5.4.3 Configure API Gateway](./5.4.3-configure-api-gateway/)
-4. [5.4.4 Test the endpoint](./5.4.4-test-endpoint/)
 ## Project-specific deployment boundary
 
 The supplied `api/openapi.yaml` documents the HTTP contract, but it does not
 contain `x-amazon-apigateway-integration` definitions. Importing it does not
 create a complete Lambda integration or JWT authorizer. Configure the HTTP API
 integration, routes, authorizer, and CORS as described in section 5.4.3.
-
-Resource identifiers and tokens are represented by placeholders throughout
-these instructions. Do not commit an AWS account ID, Cognito app client secret,
-access token, or presigned S3 URL to a shared repository.
 
 The reader chooses every resource name and Region. Using one Region for all
 resources is the simplest first deployment. Separate Regions are also supported

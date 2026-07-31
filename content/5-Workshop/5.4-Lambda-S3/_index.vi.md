@@ -19,17 +19,12 @@ Quy trình gồm bốn phần:
 1. [5.4.1 Chuẩn bị backend](./5.4.1-prepare/)
 2. [5.4.2 Tạo Lambda function](./5.4.2-create-lambda-function/)
 3. [5.4.3 Cấu hình API Gateway](./5.4.3-configure-api-gateway/)
-4. [5.4.4 Kiểm thử endpoint](./5.4.4-test-endpoint/)
 ## Phạm vi của tài liệu API
 
 Tệp `api/openapi.yaml` mô tả HTTP contract nhưng không có các khai báo
 `x-amazon-apigateway-integration`. Vì vậy, chỉ import tệp này sẽ không tạo đầy
 đủ Lambda integration hoặc JWT authorizer. Hãy cấu hình integration, route,
 authorizer và CORS theo phần 5.4.3.
-
-Tất cả resource ID và token trong tài liệu đều dùng placeholder. Không đưa AWS
-account ID, Cognito app client secret, access token hoặc presigned S3 URL vào
-repository dùng chung.
 
 Người đọc tự chọn tên và Region cho tất cả resource. Dùng cùng một Region cho
 toàn bộ resource là cách đơn giản nhất khi triển khai lần đầu. Vẫn có thể dùng

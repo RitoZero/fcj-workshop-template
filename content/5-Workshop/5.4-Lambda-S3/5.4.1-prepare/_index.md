@@ -82,7 +82,7 @@ attribute names.
 
 The bucket is not a public website. Lambda creates temporary signed URLs that
 authorize individual uploads and downloads.
-![Create Bucket](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 172744.png>)
+![Create Bucket](<../../../images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 172744.png>)
 
 ### Configure S3 CORS
 

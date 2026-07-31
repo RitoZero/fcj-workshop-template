@@ -28,7 +28,7 @@ Open **API Gateway → Create API → HTTP API → Build**.
 
 When the integration is created through the console, API Gateway can add the
 Lambda invoke permission to the function resource policy.
-![API](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173911.png>)
+![API](<../../../images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173911.png>)
 ## 2. Create the routes
 
 Point every route below to the same Lambda integration.
@@ -54,7 +54,7 @@ the documented parameter name.
 
 The current `openapi.yaml` is documentation only. It does not contain the AWS
 integration URI needed to create these integrations automatically.
-![Route](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173822.png>)
+![Routes](<../../../images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173822.png>)
 ## 3. Create the Cognito JWT authorizer
 
 Open the HTTP API and choose **Authorization → Manage authorizers → Create**.
@@ -82,7 +82,7 @@ Authorization: Bearer COGNITO_ACCESS_TOKEN
 
 Use the access token, not the Cognito ID token. The backend passes this token to
 Cognito `GetUser`.
-![JWT Authorizier](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173931.png>)
+![JWT Authorizier](<../../../images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173931.png>)
 ## 4. Configure CORS on the HTTP API
 
 Open **CORS** for the HTTP API and use:
@@ -108,7 +108,7 @@ API Gateway HTTP API CORS can answer preflight requests before they reach
 Lambda. The Lambda `OPTIONS` branch remains harmless but should not be the only
 CORS configuration, because successful and error responses also need the CORS
 headers applied consistently.
-![CORS](<Screenshot 2026-07-30 173959.png>)
+![CORS](<../../../images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 173959.png>)
 ## 5. Deploy and record the invoke URL
 
 If using `$default` with automatic deployment, route changes are published
