@@ -1,4 +1,4 @@
-baseURL = "https://github.com/RitoZero/fcj-workshop-template/"
+baseURL = "https://ritozero.github.io/fcj-workshop-template/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
