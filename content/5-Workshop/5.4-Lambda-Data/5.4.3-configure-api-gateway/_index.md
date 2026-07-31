@@ -1,5 +1,5 @@
 ---
-title: "5.4.3 Configure API Gateway"
+title: "Configure API Gateway"
 date: 2026-07-30
 weight: 3
 chapter: false

@@ -1,5 +1,5 @@
 ---
-title: "5.4.2 Tạo Lambda function"
+title: "Tạo Lambda function"
 date: 2026-07-30
 weight: 2
 chapter: false

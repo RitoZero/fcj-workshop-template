@@ -1,5 +1,5 @@
 ---
-title: "5.4.3 Cấu hình API Gateway"
+title: "Cấu hình API Gateway"
 date: 2026-07-30
 weight: 3
 chapter: false

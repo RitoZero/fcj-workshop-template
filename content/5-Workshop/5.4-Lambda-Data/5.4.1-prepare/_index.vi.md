@@ -1,5 +1,5 @@
 ---
-title: "5.4.1 Chuẩn bị backend"
+title: "Chuẩn bị backend"
 date: 2026-07-30
 weight: 1
 chapter: false
