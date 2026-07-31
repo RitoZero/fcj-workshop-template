@@ -11,23 +11,23 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** Nguyen Van A
+&emsp; **Full Name:** Vo Thanh
 
-&emsp; **Phone Number:** 0989888999 
+&emsp; **Phone Number:** 0968234577
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Email:** thanh.vo0910@hcmut.edu.vn
 
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
+&emsp; **University:** Ho Chi Minh City University of Technology
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Computer Science
 
-&emsp; **Class:** AWS082025
+&emsp; **Class:** AWS062026
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
 &emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
+&emsp; **Internship Duration:** From 01/06/2026 to 15/08/2026
 
 ![Your profile picture](images/avatar.png)
 

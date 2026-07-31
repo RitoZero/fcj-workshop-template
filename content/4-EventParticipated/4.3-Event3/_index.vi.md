@@ -59,3 +59,5 @@ Việc tham gia **FCAJ - Agentic AI Build Week** giống như một cú hích c�
 
 > **Lời kết:**
 > Sự kiện đã khắc họa vô cùng chân thực quyền năng của Agentic AI trong tay những kỹ sư trẻ đầy nhiệt huyết. Đây không chỉ là nơi phô diễn kỹ năng, mà còn là một trạm sạc năng lượng khổng lồ, thôi thúc tôi không ngừng thử nghiệm, xây dựng và dấn thân sâu hơn vào kỷ nguyên của AI Native Apps!
+>
+> ![event](../../images/4-EventParticipated/event3.jpg)

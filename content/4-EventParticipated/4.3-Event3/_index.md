@@ -59,3 +59,5 @@ Participating in **FCAJ - Agentic AI Build Week** was like a massive boost to my
 
 > **Conclusion:**
 > The event vividly portrayed the power of Agentic AI in the hands of passionate young engineers. This was not only a place to show off skills but also a massive energy-recharging station, urging me to constantly experiment, build, and dive deeper into the era of AI Native Apps!
+>
+> ![event](../../images/4-EventParticipated/event3.jpg)
