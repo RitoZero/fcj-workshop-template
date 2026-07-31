@@ -26,6 +26,6 @@ During deployment, you will choose the resource names and AWS Regions that suit 
 1. [Workshop overview](5.1-Workshop-overview)
 2. [Prerequiste](5.2-Prerequiste/)
 3. [Deploy frontend on S3](5.3-S3/)
-4. [Deploy backend and data storage](5.4-Lambda-Data/)
+4. [Deploy backend and storage](5.4-Lambda-Data/)
 5. [Testing](5.5-Testing/)
 6. [Clean up](5.6-Cleanup/)
