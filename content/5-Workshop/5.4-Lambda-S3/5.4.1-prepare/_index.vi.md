@@ -66,7 +66,7 @@ Các giá trị viết hoa là placeholder. Thay chúng trong cấu hình AWS, n
 
 Không đổi tên `PK` hoặc `SK`. Source code dùng chính xác hai tên này và có phân
 biệt chữ hoa, chữ thường.
-![Create Table](<../../../../static\images\5-Workshop\5.4-Lambda-S3\Screenshot 2026-07-30 172625.png>)
+![Create Table](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 172625.png>)
 ## 3. Tạo S3 attachment bucket riêng tư
 
 1. Chọn `YOUR_S3_REGION`.
