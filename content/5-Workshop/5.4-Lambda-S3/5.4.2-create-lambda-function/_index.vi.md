@@ -22,10 +22,6 @@ Dự án sử dụng một Lambda router để xử lý toàn bộ route backend
    `iam/lambda-execution-policy.json`.
 8. Review và lưu inline policy.
 
-Kiểm tra DynamoDB ARN dùng `YOUR_DYNAMODB_REGION`, Cognito ARN dùng
-`YOUR_COGNITO_REGION` và tất cả tên resource khớp bảng ở phần 5.4.1. IAM là
-dịch vụ global nên một execution role có thể cho phép Lambda gọi resource ở
-nhiều Region.
 
 ## 2. Tạo function
 
@@ -77,8 +73,7 @@ Mở **Configuration → Environment variables → Edit** và thêm:
 | `S3_REGION` | `YOUR_S3_REGION` |
 | `COGNITO_REGION` | `YOUR_COGNITO_REGION` |
 
-Các identifier này không phải secret của ứng dụng. Không truyền AWS access key
-cho function; Lambda tự cấp temporary credential cho execution role.
+
 
 Nếu người đọc chọn một Region cho tất cả resource, nhập cùng một Region code
 cho cả ba biến. Nếu resource nằm ở nhiều Region, nhập đúng Region của từng

@@ -22,10 +22,6 @@ This project uses one Lambda router for all backend routes.
    `iam/lambda-execution-policy.json`.
 8. Review and save the inline policy.
 
-Check that the DynamoDB ARN uses `YOUR_DYNAMODB_REGION`, the Cognito ARN uses
-`YOUR_COGNITO_REGION`, and every resource name matches the worksheet from
-section 5.4.1. IAM itself is global, so one execution role can authorize
-service calls in multiple Regions.
 
 ## 2. Create the function
 
@@ -78,10 +74,6 @@ Open **Configuration → Environment variables → Edit** and add:
 | `DYNAMODB_REGION` | `YOUR_DYNAMODB_REGION` |
 | `S3_REGION` | `YOUR_S3_REGION` |
 | `COGNITO_REGION` | `YOUR_COGNITO_REGION` |
-
-These identifiers are not application secrets. The function must not receive
-AWS access keys; Lambda automatically supplies temporary credentials for its
-execution role.
 
 When the reader selected one Region for all resources, enter that same Region
 code in all three Region variables. When the resources are split, enter each
