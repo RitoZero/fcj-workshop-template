@@ -1,20 +1,31 @@
 ---
-title : "Testing the system"
-date : 2024-01-01
-weight : 4
-chapter : false
-pre : " <b> 5.5. </b> "
+title: "Workshop"
+date: 2024-01-01
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+{{% /notice %}}
+
+# Secure Hybrid Access to S3 using VPC Endpoints
 
 #### Overview
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
 
-![Interface endpoint architecture](/images/5-Workshop/5.5-testing/diagram3.png)
+You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
++ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
++ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
 
+#### Content
 
-
+1. [Workshop overview](5.1-Workshop-overview)
+2. [Prerequiste](5.2-Prerequiste/)
+3. [Access S3 from VPC](5.3-S3-vpc/)
+4. [Access S3 from On-premises](5.4-S3-onprem/)
+5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
+6. [Clean up](5.6-Cleanup/)
