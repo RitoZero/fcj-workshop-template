@@ -77,3 +77,5 @@ Với **Amazon S3 trong Hanoi Local Zone**, bệnh viện xây dựng kiến tr�
 Amazon S3 trong AWS Local Zones (đặc biệt là **Hanoi Local Zone**) là bước tiến quan trọng giúp giải quyết bài toán cân bằng giữa **Data Residency** (Tuân thủ vị trí dữ liệu) và **Cloud Flexibility** (Tính linh hoạt của điện toán đám mây) cho các doanh nghiệp Tài chính, Y tế và Cơ quan nhà nước tại Việt Nam.
 
 🔗 **Link tài liệu tham khảo gốc:** [AWS Blog: Unlocking Data Residency with Amazon S3 in AWS Local Zones](https://aws.amazon.com/blogs/aws/unlocking-data-residency-with-amazon-s3-in-aws-local-zones/)
+
+![Blog](<../../images/3-Blogs/Blog1.png>)
