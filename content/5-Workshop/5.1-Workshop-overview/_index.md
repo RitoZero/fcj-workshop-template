@@ -1,18 +1,33 @@
 ---
-title : "Introduction"
-date : 2024-01-01 
-weight : 1 
+title : "Project Overview"
+date : 2026-07-31
+weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### VPC endpoints
-+ **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-+ Compute resources running in VPC can access  **Amazon S3**  using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+#### Todo and Note application
++ The **Todo and Note application** is a serverless web application that helps users create and organize tasks, notes, statuses, categories, custom filters, schedules, and file attachments.
++ Users register and sign in with **Amazon Cognito**. After authentication, the frontend sends the Cognito access token to **Amazon API Gateway** with each protected API request.
++ The application supports task management, automatic draft saving, multiple task views, filtering, statistics, task import and export, profile management, and private attachments.
 
-#### Workshop overview
-In this workshop, you will use two VPCs. 
-+ **"VPC Cloud"** is for cloud resources such as a  **Gateway endpoint** and an EC2 instance to test with. 
-+ **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
+#### Architecture overview
+The project separates its AWS services into four functional groups.
++ **Frontend & Authentication** uses **Amazon S3** to store the static frontend, **Amazon CloudFront** to deliver it, and **Amazon Cognito** to register and authenticate users.
++ **API & Compute** uses **Amazon API Gateway HTTP API** as the public backend entry point. API Gateway validates Cognito JWTs and invokes the Python **AWS Lambda** function.
++ **Data & Storage** uses **Amazon DynamoDB** to store user-owned application data and a private **Amazon S3** bucket to store profile pictures and task attachments.
++ **Monitoring & Permissions** uses **Amazon CloudWatch** for logs and metrics and **AWS IAM** to give Lambda only the permissions required to access the project resources.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+#### Application flow
+1. The user opens the application in a browser, which requests the frontend through **Amazon CloudFront**.
+2. CloudFront retrieves the required HTML, CSS, and JavaScript files from the frontend **Amazon S3** bucket and returns them to the browser.
+3. The frontend running in the browser communicates with **Amazon Cognito** to register, verify, or sign in the user. Cognito returns JWTs after successful authentication.
+4. The browser calls **Amazon API Gateway** and includes the Cognito access token in the `Authorization` header.
+5. API Gateway validates the JWT using the configured Cognito issuer, app client audience, and public signing keys.
+6. After authorization succeeds, API Gateway invokes **AWS Lambda** and forwards the validated JWT claims with the request.
+7. Lambda processes the application logic and accesses **Amazon DynamoDB**, **Amazon S3**, or Cognito administrative operations when required.
+8. For file uploads and downloads, Lambda returns a temporary presigned URL so the browser can communicate directly with the private attachment bucket.
+9. API Gateway and Lambda send operational logs and metrics to **Amazon CloudWatch**.
+
+The person deploying the application chooses the names and AWS Regions of the resources. Using one Region is the simplest setup, while separate Regions can also be used when every SDK client and environment variable is configured correctly.
+
