@@ -85,4 +85,4 @@ pre: " <b> 4.2. </b> "
 
 > Tổng kết lại, sự kiện đã trang bị cho tôi những kiến thức vô cùng giá trị về kỹ thuật giám sát nâng cao, công nghệ bảo mật tự động dựa trên AI và định hướng rõ ràng cho hành trình chinh phục các chứng chỉ chuyên nghiệp trên nền tảng AWS.
 >
-> ![event](../../images/4-EventParticipated/event2.jpg)
+> ![event](../../../images/4-EventParticipated/event2.jpg)

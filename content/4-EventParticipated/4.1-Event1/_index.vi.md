@@ -79,4 +79,4 @@ pre: " <b> 4.1. </b> "
 
 > Tổng thể, sự kiện mang đến những bài học sâu sắc không chỉ về chuyên môn công nghệ mà còn trang bị tư duy nghề nghiệp, thái độ làm việc và kỹ năng hòa nhập môi trường thực tế cho người làm công nghệ trẻ.
 >
-> ![event](../../images/4-EventParticipated/event1.jpg)
+> ![event](../../../images/4-EventParticipated/event1.jpg)
