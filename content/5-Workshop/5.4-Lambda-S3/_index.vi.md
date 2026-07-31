@@ -20,22 +20,6 @@ Quy trình gồm bốn phần:
 2. [5.4.2 Tạo Lambda function](./5.4.2-create-lambda-function/)
 3. [5.4.3 Cấu hình API Gateway](./5.4.3-configure-api-gateway/)
 4. [5.4.4 Kiểm thử endpoint](./5.4.4-test-endpoint/)
-
-## Kiến trúc triển khai
-
-```mermaid
-flowchart LR
-    FE["Web frontend"] -->|Access token| API["API Gateway HTTP API"]
-    API --> L["Python Lambda"]
-    L --> DDB["DynamoDB<br/>Region do người đọc chọn"]
-    L --> S3["S3 bucket riêng tư<br/>Region do người đọc chọn"]
-    L --> COG["Cognito user pool<br/>Region do người đọc chọn"]
-```
-
-Dự án không cần Dockerfile. Lambda nhận một tệp ZIP có các module Python nằm
-ngay tại thư mục gốc. Runtime Python của Lambda đã cung cấp `boto3`, còn backend
-này không sử dụng thư viện runtime bên thứ ba nào khác.
-
 ## Phạm vi của tài liệu API
 
 Tệp `api/openapi.yaml` mô tả HTTP contract nhưng không có các khai báo

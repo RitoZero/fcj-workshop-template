@@ -20,22 +20,6 @@ The deployment is split into four parts:
 2. [5.4.2 Create the Lambda function](./5.4.2-create-lambda-function/)
 3. [5.4.3 Configure API Gateway](./5.4.3-configure-api-gateway/)
 4. [5.4.4 Test the endpoint](./5.4.4-test-endpoint/)
-
-## Deployment architecture
-
-```mermaid
-flowchart LR
-    FE["Web frontend"] -->|Access token| API["API Gateway HTTP API"]
-    API --> L["Python Lambda"]
-    L --> DDB["DynamoDB<br/>Reader-selected Region"]
-    L --> S3["Private S3 bucket<br/>Reader-selected Region"]
-    L --> COG["Cognito user pool<br/>Reader-selected Region"]
-```
-
-The project does not require a Dockerfile. Lambda receives a ZIP archive whose
-root contains the Python modules. `boto3` is supplied by the Lambda Python
-runtime, and this backend has no additional third-party runtime dependency.
-
 ## Project-specific deployment boundary
 
 The supplied `api/openapi.yaml` documents the HTTP contract, but it does not
