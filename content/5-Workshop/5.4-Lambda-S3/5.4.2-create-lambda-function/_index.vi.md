@@ -101,21 +101,6 @@ lượng lớn cần nhiều thao tác hơn một request profile thông thườ
 mặc định ba giây của Lambda có thể quá ngắn. Kiểm tra duration trên CloudWatch
 trước khi giảm timeout.
 
-## 6. Kiểm tra trước khi sang API Gateway
-
-Xác nhận:
-
-- ZIP mới nhất đã được tải lên;
-- `filters.py` hỗ trợ `expression`;
-- handler là `lambda_function.lambda_handler`;
-- đủ sáu biến môi trường;
-- execution role có custom policy và `AWSLambdaBasicExecutionRole`;
-- code không chứa JWT, client secret, access key hoặc presigned URL thật.
-
-Không dùng test event trực tiếp trong Lambda console làm kiểm thử API cuối cùng.
-Router cần JWT claims và `routeKey` do API Gateway tạo ra. Hãy hoàn thành API
-integration trước.
-
 ## Tài liệu tham khảo
 
 - [Xây dựng Lambda bằng Python](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html)
