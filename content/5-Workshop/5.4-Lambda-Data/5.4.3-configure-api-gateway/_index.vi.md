@@ -3,7 +3,7 @@ title: "5.4.3 Cấu hình API Gateway"
 date: 2026-07-30
 weight: 3
 chapter: false
-pre: "<b>5.4.3 </b>"
+pre: "<b> 5.4.3 </b>"
 ---
 
 # Cấu hình API Gateway

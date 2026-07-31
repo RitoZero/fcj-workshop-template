@@ -3,7 +3,7 @@ title: "5.4.1 Chuẩn bị backend"
 date: 2026-07-30
 weight: 1
 chapter: false
-pre: "<b>5.4.1 </b>"
+pre: "<b> 5.4.1 </b>"
 ---
 
 # Chuẩn bị backend từ một AWS account mới
