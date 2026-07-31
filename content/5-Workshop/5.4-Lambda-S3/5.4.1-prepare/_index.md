@@ -67,7 +67,7 @@ repository.
 
 Do not rename `PK` or `SK`. The source code uses those exact, case-sensitive
 attribute names.
-![Create Table](<Screenshot 2026-07-30 172625.png>)
+![Create Table](<../../../../static\images\5-Workshop\5.4-Lambda-S3\Screenshot 2026-07-30 172625.png>)
 ## 3. Create the private S3 attachment bucket
 
 1. Select `YOUR_S3_REGION`.
@@ -82,7 +82,7 @@ attribute names.
 
 The bucket is not a public website. Lambda creates temporary signed URLs that
 authorize individual uploads and downloads.
-![Create Bucket](<Screenshot 2026-07-30 172744.png>)
+![Create Bucket](<../../../../static/images/5-Workshop/5.4-Lambda-S3/Screenshot 2026-07-30 172744.png>)
 
 ### Configure S3 CORS
 
