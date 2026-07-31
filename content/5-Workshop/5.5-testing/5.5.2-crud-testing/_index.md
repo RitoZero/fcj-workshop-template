@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 5.4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 In this section, we conduct end-to-end testing for all CRUD (Create, Read, Update, Delete) operations on tasks and notes, including attachment uploads via S3 Presigned URLs and real-time Kanban board state updates.
 

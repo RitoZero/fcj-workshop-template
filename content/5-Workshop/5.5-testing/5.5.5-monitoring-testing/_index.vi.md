@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trong phần này, chúng ta sẽ kiểm thử khả năng vận hành và giám sát hệ thống Serverless thông qua **Amazon CloudWatch**, bao gồm việc kiểm tra **CloudWatch Logs** (luồng ghi vết lỗi và lịch sử thực thi của Lambda) và **CloudWatch Metrics / Alarms** (biểu đồ hiệu năng và cảnh báo chi phí tài nguyên).
 

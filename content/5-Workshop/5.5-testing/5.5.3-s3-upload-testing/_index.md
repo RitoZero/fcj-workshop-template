@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+
 
 In this section, we validate the image attachment upload feature using **S3 Presigned URLs**. This architecture pattern empowers browser clients to upload files directly to Amazon S3 without routing binary payloads through backend Lambda functions, significantly optimizing bandwidth and compute latency.
 

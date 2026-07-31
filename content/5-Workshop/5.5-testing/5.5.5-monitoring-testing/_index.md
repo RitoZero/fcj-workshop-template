@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+
 
 In this section, we validate the operational visibility and observability of our Serverless backend architecture using **Amazon CloudWatch**, focusing on **CloudWatch Logs** (tracing Lambda execution events and errors) and **CloudWatch Metrics / Alarms** (performance analytics and cost control alerts).
 

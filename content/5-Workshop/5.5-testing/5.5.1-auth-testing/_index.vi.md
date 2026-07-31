@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trong phần này, chúng ta sẽ tiến hành kiểm thử luồng Xác thực người dùng (Authentication Flow) sử dụng Amazon Cognito User Pool kết hợp với giao diện Web Single Page App được lưu trữ trên Amazon S3 và phân phối qua AWS CloudFront HTTPS.
 

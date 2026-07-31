@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 # Serverless Todo/Note Web Application on AWS
 ## Giải pháp Quản lý Công việc & Ghi chú Thông minh dựa trên Kiến trúc Serverless AWS
@@ -44,11 +42,7 @@ Xây dựng ứng dụng Web dựa trên kiến trúc Serverless toàn diện tr
 
 Ứng dụng chia làm 7 tầng dịch vụ chính theo đúng sơ đồ kiến trúc hệ thống:
 
-<<<<<<< HEAD
 ![Serverless Todo/Note Architecture](<../images/2-Proposal/architecture_diagram.png>)
-=======
-![Serverless Todo/Note Architecture](../images/2-Proposal/architecture_diagram.jpg)
->>>>>>> ea19a634b3311098e95a10c1b4c4f1aa61e1742d
 
 #### Các dịch vụ AWS sử dụng
 1. **Client Layer:** Trình duyệt người dùng (User Browser).

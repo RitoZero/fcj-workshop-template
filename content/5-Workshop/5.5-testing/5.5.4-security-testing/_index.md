@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+
 
 In this section, we validate the security controls at the **Amazon API Gateway** layer by verifying the **Cognito JWT Authorizer** mechanism (rejecting unauthorized requests) and inspecting **CORS (Cross-Origin Resource Sharing)** headers to ensure smooth client-browser API interaction.
 

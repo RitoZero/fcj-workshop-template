@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trong mục này, chúng ta tiến hành kiểm thử các thao tác CRUD (Create, Read, Update, Delete) cho công việc và ghi chú, bao gồm cả tính năng đính kèm hình ảnh thông qua S3 Presigned URL và đồng bộ trạng thái trên giao diện Kanban.
 

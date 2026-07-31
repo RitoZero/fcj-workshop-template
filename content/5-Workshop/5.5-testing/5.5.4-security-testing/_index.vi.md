@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trong phần này, chúng ta sẽ kiểm thử tính an toàn của hệ thống tại tầng **Amazon API Gateway** bằng cách xác minh cơ chế **Cognito JWT Authorizer** (chặn các request không hợp lệ) và kiểm tra cấu hình **CORS (Cross-Origin Resource Sharing)** để đảm bảo Trình duyệt Web có thể tương tác mượt mà với API mà không bị lỗi giao thức cross-origin.
 

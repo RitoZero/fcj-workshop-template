@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng không sao chép nguyên văn cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trang này tổng hợp nhật ký công việc thực tập (Worklog) trong suốt chương trình **First Cloud AI Journey (FCAJ)**. Quá trình thực tập được triển khai xuyên suốt **12 tuần** (từ ngày **01/06/2026** đến ngày **21/08/2026**), bao gồm các giai đoạn học tập dịch vụ AWS nền tảng, nghiên cứu chuyên sâu các công nghệ Serverless/Security, triển khai dự án thực tế **Serverless Todo/Note Web Application** và hoàn thiện báo cáo.
 

@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả cảnh báo này.
-{{% /notice %}}
+
 
 Trong mục này, chúng ta tiến hành kiểm thử tính năng tải tệp/hình ảnh đính kèm cho ghi chú thông qua **S3 Presigned URL**. Cơ chế này cho phép Trình duyệt Client tải tệp trực tiếp lên Amazon S3 mà không cần đi qua hàm Lambda, giúp tối ưu băng thông và giảm độ trễ xử lý Backend.
 

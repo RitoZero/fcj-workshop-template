@@ -6,9 +6,7 @@ chapter: false
 pre: " <b> 5.4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+
 
 In this section, we will conduct end-to-end testing of the User Authentication flow using Amazon Cognito User Pools integrated with the Web Single Page Application hosted on Amazon S3 and distributed via AWS CloudFront HTTPS.
 
