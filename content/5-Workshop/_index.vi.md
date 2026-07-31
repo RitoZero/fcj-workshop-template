@@ -23,7 +23,7 @@ Trong quá trình triển khai, bạn sẽ tự chọn tên tài nguyên và AWS
 
 #### Nội dung
 
-1. [Tổng quan Workshop](5.1-Workshop-overview)
+1. [Tổng quan Workshop](5.1-Overview)
 2. [Chuẩn bị](5.2-Prerequiste/)
 3. [Deploy frontend lên S3](5.3-S3/)
 4. [Deploy backend và storage](5.4-Lambda-Data/)
